@@ -11,7 +11,7 @@ namespace PizzaIllico.Mobile
 {
     public partial class App
     {
-        public App() : base(() => new ShopListPage(), RegisterServices)
+        public App() : base(() => new ConnexionPage(), RegisterServices)
         {
 #if DEBUG
             Log.Listeners.Add(new DelegateLogListener((arg1, arg2) => Debug.WriteLine($"{arg1} : {arg2}")));
@@ -24,6 +24,7 @@ namespace PizzaIllico.Mobile
             DependencyService.RegisterSingleton<IApiService>(new ApiService());
             
             DependencyService.RegisterSingleton<IPizzaApiService>(new PizzaApiService());
+            DependencyService.RegisterSingleton<IConnexionApiService>(new ConnexionApiService());
         }
     }
 }
